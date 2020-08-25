@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Gantt</title>
+    <link rel="stylesheet" href="assets/css/app.css"/>
+    <link rel="stylesheet" href="dist/frappe-gantt.css"/>
+</head>
+<body>
+<div class="container">
+    <h2>Home Dashboard</h2>
+    <div class="select clients">
+        <label>
+            <select onchange="app.filterClients($(this));">
+                <option value="all"> All client</option>
+            </select>
+        </label>
+    </div>
+    <div class="select view-mode">
+        <label>
+            <select onchange="app.changeViewMode($(this));">
+                <option value="Day">Daily</option>
+                <option value="Week">Weekly</option>
+                <option value="Month" selected="">Monthly</option>
+                <option value="Year">Year</option>
+            </select>
+        </label>
+    </div>
+    <div class="gantt-target"></div>
+</div>
+</body>
+
+<script src="dist/jQuery.js"></script>
+<script src="dist/frappe-gantt.js"></script>
+<script src="assets/js/app.js"></script>
+</html>
