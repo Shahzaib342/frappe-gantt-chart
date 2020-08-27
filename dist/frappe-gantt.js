@@ -637,16 +637,16 @@ class Bar {
     setup_click_event() {
 
         //changed - display popup on mouse over as well
-        $.on(this.group, 'mouseover', '.bar-wrapper, .handle', (e, element) => {
-         if (this.action_completed) {
-                // just finished a move action, wait for a few seconds
-                return;
-            }
-
-            this.show_popup();
-            this.gantt.unselect_all();
-            this.group.classList.add('active');
-        });
+        // $.on(this.group, 'mouseover', '.bar-wrapper, .handle', (e, element) => {
+        //  if (this.action_completed) {
+        //         // just finished a move action, wait for a few seconds
+        //         return;
+        //     }
+        //
+        //     this.show_popup();
+        //     this.gantt.unselect_all();
+        //     this.group.classList.add('active');
+        // });
 
         $.on(this.group, 'focus ' + this.gantt.options.popup_trigger, e => {
             if (this.action_completed) {
@@ -1111,7 +1111,7 @@ class Gantt {
     setup_options(options) {
         const default_options = {
             header_height: 50,
-            column_width: 30,
+            column_width: 80, //changed from 30
             step: 24,
             view_modes: [...Object.values(VIEW_MODE)],
             bar_height: 20,
@@ -1218,6 +1218,8 @@ class Gantt {
     update_view_scale(view_mode) {
         this.options.view_mode = view_mode;
 
+        //changed all column_width by 2x
+
         if (view_mode === VIEW_MODE.DAY) {
             this.options.step = 24;
             this.options.column_width = 38;
@@ -1232,10 +1234,10 @@ class Gantt {
             this.options.column_width = 140;
         } else if (view_mode === VIEW_MODE.MONTH) {
             this.options.step = 24 * 30;
-            this.options.column_width = 120;
+            this.options.column_width = 120 * 2;
         } else if (view_mode === VIEW_MODE.YEAR) {
             this.options.step = 24 * 365;
-            this.options.column_width = 120;
+            this.options.column_width = 120 * 4;
         }
     }
 
@@ -1268,8 +1270,8 @@ class Gantt {
         }
 
         if (this.view_is(VIEW_MODE.YEAR)) {
-            this.gantt_start = date_utils.add(this.gantt_start, -4, 'year');
-            this.gantt_end = date_utils.add(this.gantt_end, 4, 'year');
+            this.gantt_start = date_utils.add(this.gantt_start, -2, 'year');
+            this.gantt_end = date_utils.add(this.gantt_end, 5, 'year');
         }
 
         //add date padding on both sides
