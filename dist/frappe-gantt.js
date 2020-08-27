@@ -1237,7 +1237,7 @@ class Gantt {
             this.options.column_width = 120 * 2;
         } else if (view_mode === VIEW_MODE.YEAR) {
             this.options.step = 24 * 365;
-            this.options.column_width = 120 * 4;
+            this.options.column_width = 120 * 8;
         }
     }
 
@@ -1674,11 +1674,11 @@ class Gantt {
 
         const scroll_pos =
             hours_before_first_task /
-                this.options.step *
+                this.options.step  *
                 this.options.column_width -
             this.options.column_width;
 
-        parent_element.scrollLeft = scroll_pos;
+        parent_element.scrollLeft = scroll_pos + ( this.options.column_width - 20 ); //changed from  = parent_element.scrollLeft = scroll_pos
     }
 
     bind_grid_click() {

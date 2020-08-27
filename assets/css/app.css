@@ -64,6 +64,11 @@ body {
     display: none;
 }
 
+.popup-wrapper {
+    width: 169px;
+    padding-left: 10px!important;
+}
+
 /** End **/
 /** End **/
 
