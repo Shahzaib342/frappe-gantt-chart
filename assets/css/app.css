@@ -33,6 +33,11 @@ body {
     display: none;
 }
 
+.disable-chart-area {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
 /** custom colors for gantt chart **/
 
 .cc-1 .bar {
