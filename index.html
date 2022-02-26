@@ -1,36 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Simple Gantt</title>
-    <link rel="stylesheet" href="assets/css/app.css"/>
-    <link rel="stylesheet" href="dist/frappe-gantt.css"/>
-</head>
-<body>
-<div class="container">
-    <h2>Home Dashboard</h2>
-    <div class="select clients">
+    <link rel="stylesheet" href="assets/css/app.css" />
+    <link rel="stylesheet" href="dist/frappe-gantt.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Gantt Chart</h2>
+      <div class="select clients">
         <label>
-            <select onchange="app.filterClients($(this));">
-                <option value="all"> All client</option>
-            </select>
+          <select onchange="app.filterClients($(this));">
+            <option value="all">All client</option>
+          </select>
         </label>
-    </div>
-    <div class="select view-mode">
+      </div>
+      <div class="select view-mode">
         <label>
-            <select onchange="app.changeViewMode($(this));">
-                <option value="Day">Daily</option>
-                <option value="Week">Weekly</option>
-                <option value="Month" selected="">Monthly</option>
-                <option value="Year">Year</option>
-            </select>
+          <select onchange="app.changeViewMode($(this));">
+            <option value="Day">Daily</option>
+            <option value="Week">Weekly</option>
+            <option value="Month" selected="">Monthly</option>
+            <option value="Year">Year</option>
+          </select>
         </label>
+      </div>
+      <div class="gantt-target"></div>
+      <div>
+        <h2>Gantt Chart</h2>
+        <p>
+          A Gantt chart is a graphical representation of activity against time.
+          A Gantt chart is a project management tool assisting in the planning
+          and scheduling of projects of all sizes, although they are
+          particularly useful for simplifying complex projects.
+        </p>
+        <p>
+          This repo will give you a ready made gannt chart with sample data. You
+          can extend the chart with dynamic data and add more extended tooltip
+          or you can handle different events based on your need. After
+          customization you can embed it anywhere on your app.
+        </p>
+        <h3>Features</h3>
+        <ul>
+          <li>
+            You just need to prepare a dynamic data and pass it to the chart
+            object and it will do the rest.
+          </li>
+          <li>
+            It gives you two options clients and date. You can filter the data
+            by clients with ability to show it by day, month or year. Ofcourse
+            you can change clients to whatever other data based on your need.
+          </li>
+          <li>It has the ability to add and customize tooltip.</li>
+          <li>
+            It gives you the ability to add event listeners like click, on date
+            change, on view change and redraw the chart based on any event.
+          </li>
+          <li>Fully responsive</li>
+        </ul>
+        <h3>Support</h3>
+        <p>
+          For any support or custom work you can always reach us at
+          <a href="mailto:shahzaibalihassan@gmail.com">Email</a> or skype us at
+          shahzaib8161
+        </p>
+        <p>
+          For live demo visit
+          <a href="http://206.81.5.237/">Gantt Chart Demo</a>
+        </p>
+      </div>
     </div>
-    <div class="gantt-target"></div>
-</div>
-</body>
+  </body>
 
-<script src="dist/jQuery.js"></script>
-<script src="dist/frappe-gantt.js"></script>
-<script src="assets/js/app.js"></script>
+  <script src="dist/jQuery.js"></script>
+  <script src="dist/frappe-gantt.js"></script>
+  <script src="assets/js/app.js"></script>
 </html>
